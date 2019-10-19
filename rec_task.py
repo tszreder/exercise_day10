@@ -14,4 +14,29 @@ def get_numbers(numbers_list):
             invalid_numbers.append(item)
     return valid_numbers, invalid_numbers
 
-print(get_numbers(tab), end='\n')
+print(get_numbers(tab))
+
+def is_int(number):
+    try:
+        int(number)
+        return True
+    except ValueError:
+        return False
+
+
+list_comp = [number for number in tab]
+print(list_comp)
+
+integers = get_numbers(tab)
+# print([item if item < 13 else None for item in integers])
+# print([item for item in integers if item < 13])
+
+
+print([x if is_int(x) == True else None for x in tab])
+
+[print(x) if is_int(x) == True else None for x in tab]
+
+print([int(x) for x in tab if is_int(x) and int(x) < 13])
+
+
+# napisac funkcję zwracajacą liczby całkowite w list comprehension
